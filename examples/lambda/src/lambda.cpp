@@ -26,13 +26,12 @@ void setup() {
     action();
 
     // Lambda with parameters
-    PicoCallback<void, int, int> printRange(
-        [](int lo, int hi) {
-            Serial.print("Range: ");
-            Serial.print(lo);
-            Serial.print("..");
-            Serial.println(hi);
-        });
+    PicoCallback<void, int, int> printRange([](int lo, int hi) {
+        Serial.print("Range: ");
+        Serial.print(lo);
+        Serial.print("..");
+        Serial.println(hi);
+    });
     printRange(1, 10);
 
     // Lambda that returns a value
@@ -44,7 +43,9 @@ void setup() {
     // first argument, just like a free function would
     Range window = {5, 20};
     PicoCallback<bool, int> inRange(
-        [](const Range * r, int value) { return value >= r->lo && value <= r->hi; },
+        [](const Range * r, int value) {
+            return value >= r->lo && value <= r->hi;
+        },
         &window);
 
     Serial.print("12 in [5, 20]: ");
