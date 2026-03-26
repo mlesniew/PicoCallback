@@ -2,7 +2,7 @@
   "name": "PicoCallback",
   "version": "0.1.0",
   "description": "Lightweight, heap-free callback wrapper -- a compact alternative to std::function.  Each callback instance stores a function pointer and a context pointer, occupying only 8 bytes. Supports free functions, non-capturing lambdas, and member-function-style callbacks via a context pointer.",
-  "keywords": "callback, function pointer, lambda, std::function, lightweight, no heap",
+  "keywords": "callback, function-pointer, lambda",
   "repository": {
     "type": "git",
     "url": "https://github.com/mlesniew/PicoCallback.git"
